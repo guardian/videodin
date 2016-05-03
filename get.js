@@ -7,7 +7,7 @@ const AWS = require('aws-sdk');
 const client = new presto.Client(prestoConfig.connection);
 
 const credentials = new AWS.SharedIniFileCredentials({profile: awsConfig.profile});
-AWS.config.update({region: 'eu-west-1'});
+AWS.config.update({region: awsConfig.region});
 AWS.config.credentials = credentials;
 const s3 = new AWS.S3();
 
