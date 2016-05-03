@@ -1,0 +1,15 @@
+{
+  "repository": "parp",
+  "license": "MIT",
+  "description": "parp",
+  "dependencies": {
+    "aws-sdk": "^2.2.44",
+    "mkdirp": "^0.5.1",
+    "moment": "^2.12.0",
+    "moment-range": "^2.2.0",
+    "presto-client": "^0.1.0"
+  },
+  "devDependencies": {
+    "presto-client": "^0.1.0"
+  }
+}
