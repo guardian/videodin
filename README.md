@@ -5,11 +5,13 @@ Consulting the [knowledgeable head](https://en.wikipedia.org/wiki/M%C3%ADmir).
 You will need to create some config files with some help of your local friendly developer:
 
 * `config/aws.js`
+  
   ```JavaScript
   exports.s3dataBucket = '...';
   exports.profile = '...';
   ```
 * `config/presto.js`
+  
   ```JavaScript
   exports.connection = {catalog: '...', schema: '...', host: '...', port: '...'};
   ```
