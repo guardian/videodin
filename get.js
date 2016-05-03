@@ -4,9 +4,6 @@ const prestoConfig = require('./config/presto');
 const awsConfig = require('./config/aws');
 const AWS = require('aws-sdk');
 
-const moment = require('moment');
-require('moment-range');
-
 const client = new presto.Client(prestoConfig.connection);
 
 const credentials = new AWS.SharedIniFileCredentials({profile: awsConfig.profile});

@@ -1,6 +1,8 @@
 const fs = require('fs');
 const mkdirp = require('mkdirp');
 const getDirName = require('path').dirname;
+const moment = require('moment');
+require('moment-range');
 
 exports.readFile = (path, callback) => {
     try {
@@ -25,3 +27,13 @@ exports.writeJsonFile = (filename, data, cb) => {
 };
 
 exports.dateToFolderName = date => date.replace(/-/g, '/');
+
+exports.getDates = dateOrDateRange => {
+    const range =  dateOrDateRange.split('--');
+    const dates = [];
+    // Annoyingly moment-range doesn't have a `map`, but a by;
+    moment.range(range.map(date => moment(date, 'YYYY-MM-DD'))).by('days', day =>
+        dates.push(day.format('YYYY-MM-DD')));
+
+    return dates;
+};
