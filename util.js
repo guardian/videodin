@@ -29,7 +29,8 @@ exports.writeJsonFile = (filename, data, cb) => {
 exports.dateToFolderName = date => date.replace(/-/g, '/');
 
 exports.getDates = dateOrDateRange => {
-    const range =  dateOrDateRange.split('--');
+    const splitRange =  dateOrDateRange.split('--');
+    const range = splitRange.length === 1 ? [splitRange[0], splitRange[0]] : splitRange;
     const dates = [];
     // Annoyingly moment-range doesn't have a `map`, but a by;
     moment.range(range.map(date => moment(date, 'YYYY-MM-DD'))).by('days', day =>
