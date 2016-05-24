@@ -36,7 +36,7 @@ util.getFiles('./sql', (err, files) => {
         console.info(`Asking presto for ${jobName} on the ${date}`);
         client.execute(cleanSql, (err, data, columns) => {
           if (err) {
-            console.info(`Presto Error: `, err);
+            console.info(`Presto Error [${date}, ${jobName}]: `, err);
           } else {
             writeData(jobName, date, data, columns);
           }
